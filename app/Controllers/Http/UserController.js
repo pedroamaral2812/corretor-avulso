@@ -10,6 +10,19 @@ class UserController {
 
     return user;
   }
+
+  async index(){
+    const user = await User.all()
+
+    return user
+  }
+
+  async show ({ params, response }) {
+    const user = await User.findOrFail(params.id)
+
+    return user;
+
+  }
 }
 
 module.exports = UserController

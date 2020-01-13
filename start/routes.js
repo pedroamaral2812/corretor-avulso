@@ -18,6 +18,9 @@ const Route = use('Route')
 
 /* Rota dos usuarios */
 Route.post('/users', 'UserController.store').validator('User');
+Route.get('/users/:id', 'UserController.show');
+Route.get('/users', 'UserController.index');
+
 //Route.put('/users/:id', 'UserController.update').middleware('auth')
 
 Route.post('/sessions', 'SessionController.store').validator('Session');
